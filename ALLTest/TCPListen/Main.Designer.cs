@@ -35,12 +35,10 @@
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.bar1 = new DevComponents.DotNetBar.Bar();
-            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this.labelItem_status = new DevComponents.DotNetBar.LabelItem();
             this.circularProgressItem1 = new DevComponents.DotNetBar.CircularProgressItem();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
-            this.superTabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +79,6 @@
             // 
             // superTabControlPanel1
             // 
-            this.superTabControlPanel1.Controls.Add(this.buttonX1);
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlPanel1.Location = new System.Drawing.Point(60, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
@@ -110,7 +107,7 @@
             this.bar1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bar1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.labelItem1,
+            this.labelItem_status,
             this.circularProgressItem1});
             this.bar1.Location = new System.Drawing.Point(0, 343);
             this.bar1.Name = "bar1";
@@ -124,29 +121,18 @@
             this.bar1.ThemeAware = true;
             this.bar1.WrapItemsDock = true;
             // 
-            // labelItem1
+            // labelItem_status
             // 
-            this.labelItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
-            this.labelItem1.Name = "labelItem1";
-            this.labelItem1.Text = "Status";
-            this.labelItem1.ThemeAware = true;
+            this.labelItem_status.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
+            this.labelItem_status.Name = "labelItem_status";
+            this.labelItem_status.Text = "Status";
+            this.labelItem_status.ThemeAware = true;
             // 
             // circularProgressItem1
             // 
             this.circularProgressItem1.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.circularProgressItem1.Name = "circularProgressItem1";
             this.circularProgressItem1.ThemeAware = true;
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(334, 99);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(155, 126);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 0;
-            this.buttonX1.Text = "Hit";
             // 
             // Main
             // 
@@ -163,7 +149,6 @@
             this.Text = "ToolBox";
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.ResumeLayout(false);
 
@@ -176,9 +161,8 @@
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.Bar bar1;
-        private DevComponents.DotNetBar.LabelItem labelItem1;
+        private DevComponents.DotNetBar.LabelItem labelItem_status;
         private DevComponents.DotNetBar.CircularProgressItem circularProgressItem1;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
 
     }
 }
