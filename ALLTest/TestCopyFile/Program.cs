@@ -15,6 +15,7 @@ namespace TestCopyFile
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //dqwqeqweqweqwe
             Application.Run(new Form1());
         }
     }
