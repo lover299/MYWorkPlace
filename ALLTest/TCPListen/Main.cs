@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.Metro;
+using DevComponents.DotNetBar;
 
-namespace TCPListen
+namespace ToolBox
 {
     public partial class Main : MetroForm
     {
         public Main()
         {
             InitializeComponent();
-            this.CircleProgressStart();
+           // var temp = new TCPListen.TCPListen();
+           // temp.Dock = DockStyle.Fill;
+           // this.superTabControlPanel1.Controls.Add(temp);
+            //this.CircleProgressStart();
         }
 
         #region 辅助函数
