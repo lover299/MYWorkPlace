@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainToolBox));
+            DevComponents.DotNetBar.Rendering.SuperTabPanelColorTable superTabPanelColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabPanelColorTable();
+            DevComponents.DotNetBar.Rendering.SuperTabPanelItemColorTable superTabPanelItemColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabPanelItemColorTable();
+            DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabItemColorTable superTabItemColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabItemColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabColorStates superTabColorStates1 = new DevComponents.DotNetBar.Rendering.SuperTabColorStates();
             DevComponents.DotNetBar.Rendering.SuperTabItemStateColorTable superTabItemStateColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabItemStateColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable2 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
-            DevComponents.DotNetBar.Rendering.SuperTabPanelColorTable superTabPanelColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabPanelColorTable();
-            DevComponents.DotNetBar.Rendering.SuperTabPanelItemColorTable superTabPanelItemColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabPanelItemColorTable();
-            DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.LableToolBox = new DevComponents.DotNetBar.LabelX();
             this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LableToolBox = new DevComponents.DotNetBar.LabelX();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.listenerAndSender1 = new ToolBox.TCPListens.ListenerAndSender();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.panelEx1.SuspendLayout();
             this.panelEx4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -86,6 +86,22 @@
             this.panelEx1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelEx1_MouseDown);
             this.panelEx1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelEx1_MouseMove);
             this.panelEx1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelEx1_MouseUp);
+            // 
+            // LableToolBox
+            // 
+            // 
+            // 
+            // 
+            this.LableToolBox.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LableToolBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LableToolBox.Location = new System.Drawing.Point(27, 0);
+            this.LableToolBox.Name = "LableToolBox";
+            this.LableToolBox.Size = new System.Drawing.Size(48, 27);
+            this.LableToolBox.TabIndex = 4;
+            this.LableToolBox.Text = "<b>ToolBox</b>";
+            this.LableToolBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseDown);
+            this.LableToolBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseMove);
+            this.LableToolBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseUp);
             // 
             // panelEx4
             // 
@@ -155,22 +171,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // LableToolBox
-            // 
-            // 
-            // 
-            // 
-            this.LableToolBox.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LableToolBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LableToolBox.Location = new System.Drawing.Point(27, 0);
-            this.LableToolBox.Name = "LableToolBox";
-            this.LableToolBox.Size = new System.Drawing.Size(48, 27);
-            this.LableToolBox.TabIndex = 4;
-            this.LableToolBox.Text = "<b>ToolBox</b>";
-            this.LableToolBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseDown);
-            this.LableToolBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseMove);
-            this.LableToolBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseUp);
-            // 
             // superTabControl1
             // 
             this.superTabControl1.BackColor = System.Drawing.Color.White;
@@ -206,6 +206,33 @@
             this.superTabControl1.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.OneNote2007;
             this.superTabControl1.Text = "superTabControl1";
             // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.Tile;
+            this.superTabControlPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.superTabControlPanel1.Controls.Add(this.listenerAndSender1);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(67, 0);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            superTabLinearGradientColorTable1.Colors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))))};
+            superTabPanelItemColorTable1.Background = superTabLinearGradientColorTable1;
+            superTabPanelColorTable1.Default = superTabPanelItemColorTable1;
+            this.superTabControlPanel1.PanelColor = superTabPanelColorTable1;
+            this.superTabControlPanel1.Size = new System.Drawing.Size(744, 403);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // listenerAndSender1
+            // 
+            this.listenerAndSender1.BackColor = System.Drawing.Color.White;
+            this.listenerAndSender1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listenerAndSender1.Location = new System.Drawing.Point(0, 0);
+            this.listenerAndSender1.Name = "listenerAndSender1";
+            this.listenerAndSender1.Size = new System.Drawing.Size(744, 403);
+            this.listenerAndSender1.TabIndex = 0;
+            // 
             // superTabItem1
             // 
             this.superTabItem1.AttachedControl = this.superTabControlPanel1;
@@ -219,34 +246,7 @@
             superTabColorStates1.Disabled = superTabItemStateColorTable1;
             superTabItemColorTable1.Bottom = superTabColorStates1;
             this.superTabItem1.TabColor = superTabItemColorTable1;
-            this.superTabItem1.Text = "superTabItem1";
-            // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.BackgroundImagePosition = DevComponents.DotNetBar.eStyleBackgroundImage.Tile;
-            this.superTabControlPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.superTabControlPanel1.Controls.Add(this.listenerAndSender1);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(99, 0);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            superTabLinearGradientColorTable1.Colors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))))};
-            superTabPanelItemColorTable1.Background = superTabLinearGradientColorTable1;
-            superTabPanelColorTable1.Default = superTabPanelItemColorTable1;
-            this.superTabControlPanel1.PanelColor = superTabPanelColorTable1;
-            this.superTabControlPanel1.Size = new System.Drawing.Size(712, 403);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
-            // 
-            // listenerAndSender1
-            // 
-            this.listenerAndSender1.BackColor = System.Drawing.Color.White;
-            this.listenerAndSender1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listenerAndSender1.Location = new System.Drawing.Point(0, 0);
-            this.listenerAndSender1.Name = "listenerAndSender1";
-            this.listenerAndSender1.Size = new System.Drawing.Size(712, 403);
-            this.listenerAndSender1.TabIndex = 0;
+            this.superTabItem1.Text = "Listener";
             // 
             // MainToolBox
             // 
