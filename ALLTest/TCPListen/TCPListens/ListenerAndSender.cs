@@ -42,12 +42,16 @@ namespace ToolBox.TCPListens
                 this.Invoke((Action)(() =>
                     {
                         this.textBoxXBack.Text += (Status + Environment.NewLine);
+                        textBoxXBack.SelectionStart = textBoxXBack.Text.Length;
+                        textBoxXBack.ScrollToCaret();
                     }
                     ));
             }
             else
             {
                 this.textBoxXBack.Text += (Status + Environment.NewLine);
+                textBoxXBack.SelectionStart = textBoxXBack.Text.Length;
+                textBoxXBack.ScrollToCaret();
             }
         }
 
@@ -82,6 +86,7 @@ namespace ToolBox.TCPListens
                  listener = new TcpListener(IPAddress.Any, port);
                 ipadress =((IPEndPoint) (listener.LocalEndpoint)).Address;
                 listener.Start(10);
+                //Running
                 while (Running)
                 {
                     var tempclient = listener.AcceptTcpClient();
@@ -104,7 +109,7 @@ namespace ToolBox.TCPListens
                 }
                       ));
                 listener.Stop();
-                
+                Running = false;
             }
             catch (Exception e)
             {
@@ -117,7 +122,9 @@ namespace ToolBox.TCPListens
                 if (listener!=null)
                 {
                     listener.Stop();
+                   
                 }
+                Running = false;
                 
             }
 
@@ -191,14 +198,17 @@ namespace ToolBox.TCPListens
 
         private void buttonXStop_Click(object sender, EventArgs e)
         {
-            Running = false;
-            if (this.textBoxXPort.Text.Length != 0)
+            
+            if ((this.textBoxXPort.Text.Length != 0)&&(Running==true))
             {
+                Running = false;
                 try
                 {
                     TcpClient tclient = new TcpClient();
                     tclient.Connect((IPAddress)(System.Net.Dns.Resolve(System.Net.Dns.GetHostName()).AddressList.GetValue(0)), port);
-                    tclient.Client.Blocking = true;
+                    //tclient.Client.Blocking = true;
+                    //tclient.Connect((IPAddress)(System.Net.Dns.Resolve(System.Net.Dns.GetHostName()).AddressList.GetValue(0)), port);
+                   tclient.Client.Blocking = true;
                     tclient.Client.Send(new byte[] { 0x00 });
                     tclient.Close();
                 }
