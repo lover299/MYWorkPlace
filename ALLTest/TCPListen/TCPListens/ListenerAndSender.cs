@@ -10,6 +10,7 @@ using SmallP;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ToolBox.TCPListens
 {
@@ -22,6 +23,13 @@ namespace ToolBox.TCPListens
             groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             StatusChanged += new Action<object, string>(ListenerAndSender_StatusChanged);
+            TaskScheduler.UnobservedTaskException += new EventHandler<UnobservedTaskExceptionEventArgs>(TaskScheduler_UnobservedTaskException);
+        }
+
+        void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            e.SetObserved();
+                //throw new NotImplementedException();
         }
 
         #region Listener
@@ -90,17 +98,9 @@ namespace ToolBox.TCPListens
                 while (Running)
                 {
                     var tempclient = listener.AcceptTcpClient();
+                    var temp = Task.Factory.StartNew(() => { StartReceive(tempclient); });
                     SetReceiveStatus("接入:" + ((IPEndPoint)(tempclient.Client.LocalEndPoint)).Address.ToString());
-                    tempclient.ReceiveTimeout = 1000;
-                    var stream = tempclient.GetStream();
-                    byte[] message = new byte[100];
-                    stream.Read(message, 0, 100);
-                    var realmessage = MessageDele(message, 6);
-                    SetReceiveStatus("收:" + BitConverter.ToString(realmessage));
-                    var sendmessage = MessageDele(GetSend(),6);
-                    stream.Write(sendmessage, 0, sendmessage.Length);
-                    SetReceiveStatus("发:" + BitConverter.ToString(sendmessage));
-                    tempclient.Close();
+                    
                   
                 }
                 this.Invoke((Action)(() =>
@@ -130,6 +130,24 @@ namespace ToolBox.TCPListens
 
         }
 
+
+        public void StartReceive(TcpClient tempclient)
+        {
+            while(true)
+            {
+              
+                    //tempclient.ReceiveTimeout = 1000;
+                    var stream = tempclient.GetStream();
+                    byte[] message = new byte[100];
+                    stream.Read(message, 0, 100);
+                    var realmessage = MessageDele(message, 6);
+                    SetReceiveStatus("收:" + BitConverter.ToString(realmessage));
+                    var sendmessage = MessageDele(GetSend(), 6);
+                    stream.Write(sendmessage, 0, sendmessage.Length);
+                    SetReceiveStatus("发:" + BitConverter.ToString(sendmessage));
+                
+            }
+        }
 
         private byte[] MessageDele(byte[] message, int count)
         {
@@ -243,6 +261,11 @@ namespace ToolBox.TCPListens
         private void 清除所有ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBoxXBack.Clear();
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,5 +55,27 @@ namespace TestCopyFile
             //temp.Add("1");
             temp.RemoveAll(x => x == null);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //List<int> tem = new List<int>() { 1, 3, 5, 7, 9 };
+            // tem.Reverse();
+            //int[] tem2 = new int[] { 2, 4, 6, 8 };
+            //var a2 = tem.Reverse<int>();
+            double i1 = -13.0001;
+            uint i2 = (uint)i1;
+            ushort m = 1024;
+            var tem = m / 1000.0;
+            int i = (int)MyEnum.qqq;
+            MyEnum k = (MyEnum)i;
+            UInt64 p = 0x01ff;
+            var temp = p >> 9;
+        }
+    }
+
+    enum MyEnum:byte 
+    {
+        qqq=0x38,
+        www
     }
 }

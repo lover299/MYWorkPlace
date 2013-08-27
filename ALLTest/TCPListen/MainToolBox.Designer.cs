@@ -46,8 +46,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.listenerAndSender1 = new ToolBox.TCPListens.ListenerAndSender();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.listenerAndSender1 = new ToolBox.TCPListens.ListenerAndSender();
             this.panelEx1.SuspendLayout();
             this.panelEx4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -98,7 +98,7 @@
             this.LableToolBox.Name = "LableToolBox";
             this.LableToolBox.Size = new System.Drawing.Size(48, 27);
             this.LableToolBox.TabIndex = 4;
-            this.LableToolBox.Text = "<b>ToolBox</b>";
+            this.LableToolBox.Text = "ToolBox";
             this.LableToolBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseDown);
             this.LableToolBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseMove);
             this.LableToolBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LableToolBox_MouseUp);
@@ -131,6 +131,7 @@
             this.pictureBoxClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.BackgroundImage")));
             this.pictureBoxClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBoxClose.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(19, 19);
@@ -165,6 +166,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 19);
@@ -199,7 +201,7 @@
             this.superTabControl1.SelectedTabIndex = 0;
             this.superTabControl1.Size = new System.Drawing.Size(811, 403);
             this.superTabControl1.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Left;
-            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F);
             this.superTabControl1.TabIndex = 1;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1});
@@ -224,15 +226,6 @@
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
-            // listenerAndSender1
-            // 
-            this.listenerAndSender1.BackColor = System.Drawing.Color.White;
-            this.listenerAndSender1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listenerAndSender1.Location = new System.Drawing.Point(0, 0);
-            this.listenerAndSender1.Name = "listenerAndSender1";
-            this.listenerAndSender1.Size = new System.Drawing.Size(744, 403);
-            this.listenerAndSender1.TabIndex = 0;
-            // 
             // superTabItem1
             // 
             this.superTabItem1.AttachedControl = this.superTabControlPanel1;
@@ -247,6 +240,15 @@
             superTabItemColorTable1.Bottom = superTabColorStates1;
             this.superTabItem1.TabColor = superTabItemColorTable1;
             this.superTabItem1.Text = "Listener";
+            // 
+            // listenerAndSender1
+            // 
+            this.listenerAndSender1.BackColor = System.Drawing.Color.White;
+            this.listenerAndSender1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listenerAndSender1.Location = new System.Drawing.Point(0, 0);
+            this.listenerAndSender1.Name = "listenerAndSender1";
+            this.listenerAndSender1.Size = new System.Drawing.Size(744, 403);
+            this.listenerAndSender1.TabIndex = 0;
             // 
             // MainToolBox
             // 

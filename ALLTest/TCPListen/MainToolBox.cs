@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.Metro;
 using DevComponents.DotNetBar;
+using System.Collections;
 
 namespace ToolBox
 {
@@ -18,7 +19,8 @@ namespace ToolBox
 
         public MainToolBox()
         {
-            
+            //Queue mmm = new Queue();
+            //var tem = mmm.Dequeue();
             InitializeComponent();
         }
 
