@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabTest.Designer.cs">
+      <DependentUpon>TabTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="TCPListens\ListenerAndSender.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TabTest.resx">
+      <DependentUpon>TabTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TCPListens\ListenerAndSender.resx">
       <DependentUpon>ListenerAndSender.cs</DependentUpon>
     </EmbeddedResource>

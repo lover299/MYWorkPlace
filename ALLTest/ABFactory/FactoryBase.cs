@@ -24,6 +24,8 @@ namespace ABFactory
 
 
         #endregion
+
+
         #region 静态方法
         /// <summary>
         /// 
